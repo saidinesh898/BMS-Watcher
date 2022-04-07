@@ -1,0 +1,25 @@
+{
+  "name": "bms-watcher",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mailazy-node": "^0.1.0",
+    "mongoose": "^6.2.10",
+    "node-cron": "^3.0.0",
+    "node-fetch": "^2.6.7",
+    "nodejs-base64": "^2.0.0",
+    "nodemailer": "^6.7.3",
+    "nodemon": "^2.0.15",
+    "postman-request": "^2.88.1-postman.31",
+    "urlencode": "^1.1.0"
+  }
+}
