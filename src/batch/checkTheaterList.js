@@ -5,6 +5,7 @@ const Watcher = require('../models/watcher');
 const  urlencode = require('urlencode');
 const sendEmail = require('../smtp/sendEmail');
 
+
 let server = ''
 
 if(process.env.NODE_ENV === "development" ){
@@ -15,10 +16,11 @@ else{
 }
 
 
-
 const checkTheaterList = async() => {
     console.log("Check Theater List Batch Started")
     dataDump = await Watcher.find()
+
+
     //console.log(dataDump)
 
      dataDump.forEach(async element => {
@@ -63,9 +65,9 @@ const checkTheaterList = async() => {
 
        }
 
-       console.log(newTheaterObj)
+     
        sendEmail(newTheaterObj)
-        
+       console.log("Batch Ended")
        }
     });
 }

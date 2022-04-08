@@ -1,6 +1,8 @@
 // const MailazyClient = require('mailazy-node');
 // const client = new MailazyClient({ accessKey: process.env.accessKey_MAIL, accessSecret: process.env.accessSecret_MAIL });
 const  nodemailer = require('nodemailer');
+require('../db/mongoose')
+const EmailList = require('../models/emailList')
 
 // const sendEmail = async (sendPlayload='') => {
 //     sendPlayloadString = sendPlayload.toString()
@@ -21,6 +23,12 @@ const  nodemailer = require('nodemailer');
 
 // sendEmail()
 const sendEmail = async (sendPlayload='') => {
+
+  const emailDump = await EmailList.find()
+  const email = await emailDump[0].emailAddress
+  let emaillist = email.split(",")
+  console.log(emaillist)
+
     sendPlayloadString = JSON.stringify(sendPlayload)
     let transporter = nodemailer.createTransport({
         host: process.env.host,
@@ -42,7 +50,7 @@ const sendEmail = async (sendPlayload='') => {
       });
       let mailOptions = {
         from: 'no-reply@sinuos.in',
-        to: 'saidinesh898@gmail.com',
+        to: emaillist,
         subject: 'Ticket Watcher - Node.JS',
         text: `
         Movie Name : ${sendPlayload.movie} 
