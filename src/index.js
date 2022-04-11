@@ -18,7 +18,9 @@ const port = process.env.PORT || 80
 app.use(express.json())
 
 
-
+app.get("/removeEmailID", async(req, res) => {
+  res.send("Jakki Sutha Mudu")
+})
 
 
 app.get("/theaterList/:id", async(req, res) => {
