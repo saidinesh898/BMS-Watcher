@@ -18,8 +18,8 @@ const port = process.env.PORT || 80
 app.use(express.json())
 
 
-app.get("/removeemailiD", async(req, res) => {
-  res.send("<h2>Eclipse Sutha Mudu</h2>")
+app.get('/vicky', (req,res)=> {
+  res.send("Arun Why are you Gay???")
 })
 
 
