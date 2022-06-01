@@ -19,7 +19,7 @@ app.use(express.json())
 
 app.get("/tcs",(req,res)=> {
 
-    res.send("Hello TCS")
+    res.send("Hello Vedant")
 
 })
 
