@@ -17,7 +17,11 @@ const port = process.env.PORT || 80
 
 app.use(express.json())
 
+app.get("/tcs",(req,res)=> {
 
+    res.send("Hello TCS")
+
+})
 
 
 
