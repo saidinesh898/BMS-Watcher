@@ -184,12 +184,12 @@ else{
 
 })
 
-checkTheaterList()
+// checkTheaterList()
 
-cron.schedule('* * * * *', () => {
-  console.log('running a task every minute');
-  checkTheaterList()
-});
+// cron.schedule('* * * * *', () => {
+//   console.log('running a task every minute');
+//   checkTheaterList()
+// });
 
 
 
